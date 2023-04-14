@@ -1,0 +1,10 @@
+body {
+  background-image: url("../img/img_1.jpg");
+  background-size: 100%;
+}
+
+.authorization{
+    margin-left: 600px;
+    margin-top: 200px;
+    color: white;
+}
