@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_required, login_user, logout_user
+from werkzeug.exceptions import Unauthorized
 from requests import post
 
 from data import db_session
@@ -21,6 +22,18 @@ login_manager.init_app(app)
 def load_user(user_id):
     db_sess = db_session.create_session()
     return db_sess.query(User).get(user_id)
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
+
+
+@app.errorhandler(Unauthorized)
+def Unauthorized():
+    return redirect("/login")
 
 
 @app.route('/')
@@ -72,11 +85,6 @@ def recipe_finder():
     return render_template('recipe_finder')
 
 
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect("/")
 
 
 def main():
