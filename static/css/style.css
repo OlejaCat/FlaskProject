@@ -1,0 +1,43 @@
+body {
+  background-image: url("../img/img_1.jpg");
+  background-size: 100%;
+}
+.authorization{
+    margin-left: 600px;
+    margin-top: 200px;
+    color: white;
+}
+.registration_h1{
+    margin-left: 640px;
+    margin-top: 180px;
+    color: white;
+}
+.registartion_email{
+    margin-left: 300px;
+    margin-top: 17px;
+    color: white;
+    margin-right: 300px;
+}
+.registartion_password{
+    margin-left: 300px;
+    margin-top: 17px;
+    color: white;
+    margin-right: 300px;
+}
+.registartion_password_again{
+    margin-left: 300px;
+    margin-top: 17px;
+    color: white;
+    margin-right: 300px;
+}
+.registartion_name{
+    margin-left: 300px;
+    margin-top: 17px;
+    color: white;
+    margin-right: 300px;
+}
+.registartion_submit{
+    margin-left: 300px;
+    margin-top: 10px;
+    color: white;
+}
