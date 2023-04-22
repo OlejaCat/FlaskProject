@@ -67,6 +67,11 @@ def register():
     return render_template('Registration.html', form=form)
 
 
+@app.route('/recipe_finder', methods=['GET', 'POST'])
+def recipe_finder():
+    return render_template('recipe_finder')
+
+
 @app.route('/logout')
 @login_required
 def logout():
