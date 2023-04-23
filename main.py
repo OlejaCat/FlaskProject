@@ -82,7 +82,7 @@ def register():
 
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
-    return render_template('index.html')
+    return render_template('recipe.html')
 
 
 def main():
