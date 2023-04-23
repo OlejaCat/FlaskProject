@@ -4,10 +4,12 @@ from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_required, login_user, logout_user
 from werkzeug.exceptions import Unauthorized
 from requests import post
+from requests import delete, post, get, request
 
 from data import db_session
 from data.users import User
 from forms.LoginForm import LoginForm
+from forms.AddProductForm import AddProductForm
 from forms.user import RegisterForm
 
 UPLOAD_FOLDER = '/static/images'
@@ -82,7 +84,14 @@ def register():
 
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
-    return render_template('recipe.html')
+    form = AddProductForm()
+    results = get(f'http://localhost:5000/api/product/{id_product}').json()['product']
+    if request.method == 'GET':
+        form.name.data = results['name']
+        form.cost.data = results['cost']
+    if form.validate_on_submit():
+        pass
+    return render_template('recipe_finder.html', form=form)
 
 
 def main():

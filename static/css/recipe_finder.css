@@ -1,7 +1,6 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("images/food_3.jpg");
-  background-position: 65.55% 0%;
-  background-size: 135%;
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/food_3.jpg");
+  background-position: 100%;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -14,7 +13,7 @@
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: 335px auto 0 79px;
+  margin: 400px auto 0 500px;
 }
 
 .u-section-1 .u-btn-2 {
@@ -23,7 +22,7 @@
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: -42px auto 60px -50px;
+  margin: -41px auto 60px 200px;
 }
 
 @media (max-width: 1199px) {
