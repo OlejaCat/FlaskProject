@@ -3,12 +3,13 @@ import os
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_required, login_user, logout_user
 from werkzeug.exceptions import Unauthorized
-from requests import post
+from requests import delete, post, get, request
 
 from data import db_session
 from data.products import Products
 from data.users import User
 from forms.LoginForm import LoginForm
+from forms.AddProductForm import AddProductForm
 from forms.ProductsForm import ProductsForm
 from forms.FinderForm import FinderForm
 from forms.user import RegisterForm
@@ -55,23 +56,23 @@ def login():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return redirect("/recipes")
-        return render_template('Login.html',
+        return render_template('login.html',
                                message="Incorrect login or password",
                                form=form)
     return render_template('login.html', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/registration', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
-            return render_template('register.html', title='Registration',
+            return render_template('registration.html', title='Registration',
                                    form=form,
                                    message="Passwords")
         db_sess = db_session.create_session()
         if db_sess.query(User).filter(User.email == form.email.data).first():
-            return render_template('register.html', title='Registration',
+            return render_template('registration.html', title='Registration',
                                    form=form,
                                    message="There is already such a user")
         """post('http://localhost:5000/api/v2/users', json={
@@ -85,7 +86,14 @@ def register():
 
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
-    return render_template('recipe_finder')
+    form = AddProductForm()
+    results = get(f'http://localhost:5000/api/product/{id_product}').json()['product']
+    if request.method == 'GET':
+        form.name.data = results['name']
+        form.cost.data = results['cost']
+    if form.validate_on_submit():
+        pass
+    return render_template('recipe_finder.html', form=form)
 
 
 @app.route('/products', methods=['GET', 'POST'])
