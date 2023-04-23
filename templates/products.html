@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Recipe_finder</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="../static/css/products.css" media="screen">
+    <script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "",
+        "logo": "../static/images/git.png"
+    }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Recipe_finder">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+<body class="u-body u-overlap u-overlap-contrast u-xl-mode" data-lang="ru">
+<header class="u-clearfix u-gradient u-header u-sticky u-header" id="sec-73e5" data-animation-name=""
+        data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><a href="https://nicepage.com"
+                                                                                            class="u-image u-logo u-image-1"
+                                                                                            data-image-width="1200"
+                                                                                            data-image-height="1200"
+                                                                                            title="a" target="_blank">
+    <img src="../static/images/git.png" class="u-logo-image u-logo-image-1">
+</a>
+    <nav class="u-align-left u-font-size-14 u-menu u-menu-hamburger u-nav-spacing-25 u-offcanvas u-menu-1"
+         data-responsive-from="XL">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
+               href="#" style="font-size: calc(1em + 20px); padding: 10px 14px;">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b92"></use>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                     id="svg-7b92" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;"
+                     xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect
+                        y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g></svg>
+            </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+                <li class="u-nav-item"><a
+                        class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                        href="/recipe_finder" style="padding: 10px 1px 10px 10px;">Recipe finder</a>
+                </li>
+                <li class="u-nav-item"><a
+                        class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                        href="/products" style="padding: 10px 1px 10px 10px;">Products</a>
+                </li>
+                <li class="u-nav-item"><a
+                        class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                        href="/logout" style="padding: 10px 1px 10px 10px;">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                <div class="u-inner-container-layout u-sidenav-overflow">
+                    <div class="u-menu-close"></div>
+                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/recipes_finder">Recipe
+                            finder</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/products">Products</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+    </nav>
+</header>
+<section class="u-align-center u-clearfix u-gradient u-section-1" id="sec-075a">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
+            <div class="u-tab-content">
+                <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5"
+                     role="tabpanel" aria-labelledby="link-tab-0da5">
+                    <div class="u-container-layout u-container-layout-1">
+                        <div class="u-align-center u-clearfix u-custom-html u-custom-html-1">
+                            <form method=post>
+                                {{ form.name.label }}<br>
+                                {{ form.csrf_token }}
+                                {{ form.name(class="form-control") }}<br>
+                                {{ form.submit(class="btn btn-primary") }}
+                            </form>
+                        </div>
+                        <br>
+                        <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                            {% if product != None %}
+                            <form class="news-form">
+                                <h1 align="center">{{ product.name }}</h1>
+                                <p align="center" font-family="‘Open Sans’, sans-serif" font-size="15px">Costs: {{
+                                    product.cost }} rubles</p>
+                                <p align="center" font-family="‘Open Sans’, sans-serif" font-size="15px">Product Id:
+                                    {{ product.id }}</p>
+                                {% if current_user.is_authenticated %}
+                                <div>
+                                    <a style="border-right: 2px;" href="/products_edit/{{ product.id }}"
+                                       class="btn btn-warning"> Edit </a>
+                                    <a style="border-right: 2px;" href="/products_delete/{{ product.id }}"
+                                       class="btn btn-danger"> Delete </a>
+                                </div>
+                                {% endif %}
+                            </form>
+                            {% endif %}
+                            <a style="align: center;" href="../static/Products.xlsx" download>Download products info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
+background-image: linear-gradient(#997b4b, #875e2d) !important
+}
+
+
+</style>
+
+
+</body>
+</html>

@@ -6,8 +6,11 @@ from werkzeug.exceptions import Unauthorized
 from requests import post
 
 from data import db_session
+from data.products import Products
 from data.users import User
 from forms.LoginForm import LoginForm
+from forms.ProductsForm import ProductsForm
+from forms.FinderForm import FinderForm
 from forms.user import RegisterForm
 
 UPLOAD_FOLDER = '/static/images'
@@ -77,7 +80,7 @@ def register():
             'password': form.password.data}).json()
 """
         return redirect('/login')
-    return render_template('Registration.html', form=form)
+    return render_template('registration.html', form=form)
 
 
 @app.route('/recipe_finder', methods=['GET', 'POST'])
@@ -85,6 +88,21 @@ def recipe_finder():
     return render_template('recipe_finder')
 
 
+@app.route('/products', methods=['GET', 'POST'])
+def products():
+    form = FinderForm()
+    additional_form = ProductsForm()
+    product = None
+
+    if form.validate_on_submit() and form.submit.data:
+        db_sess = db_session.create_session()
+        search = form.name.data[1:]
+        results = db_sess.query(Products).all()
+        for element in results:
+            if search in element.name:
+                product = element
+
+    return render_template('products.html', form=form, additional_form=additional_form, product=product)
 
 
 def main():
