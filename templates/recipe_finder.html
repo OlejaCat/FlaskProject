@@ -26,9 +26,13 @@
     <meta property="og:type" content="website">
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
+
+
+
+
 <body class="u-body u-overlap u-overlap-contrast u-xl-mode" data-lang="ru">
 <header class="u-clearfix u-gradient u-header u-sticky u-header" id="sec-73e5" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><a href="https://nicepage.com"
+        data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><a href="https://github.com/OlejaCat/FlaskProject"
                                                                                             class="u-image u-logo u-image-1"
                                                                                             data-image-width="1200"
                                                                                             data-image-height="1200"
@@ -86,7 +90,7 @@
                 <div class="u-inner-container-layout u-sidenav-overflow">
                     <div class="u-menu-close"></div>
                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/recipes_finder">Recipe finder</a>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/recipe_finder">Recipe finder</a>
                         </li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/products">Products</a>
                         </li>
@@ -99,9 +103,29 @@
         </div>
     </nav>
 </header>
+
 <section class="u-clearfix u-container-align-center u-image u-shading u-section-1" id="sec-115e" data-image-width="3000"
          data-image-height="2250">
     <div class="u-clearfix u-sheet u-sheet-1"></div>
+    <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
+              <div class="u-container-layout u-container-layout-1">
+                <div class="u-align-center u-clearfix u-custom-html u-custom-html-1">
+                  <form method=post>
+                  {{ form.name.label }}<br>
+                  {{ form.csrf_token }}
+                  {{ form.name(class="form-control") }}<br>
+                  {{ form.submit(class="btn btn-primary") }}
+                  </form>
+                </div>
+                <br>
+              </div>
+            </div>
+    <a href=""
+       class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-btn-1">Search<br>
+    </a>
+    <a href=""
+       class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-btn-2">Clear<br>
+    </a>
 </section>
 <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
 background-image: linear-gradient(#997b4b, #875e2d) !important

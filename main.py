@@ -52,23 +52,23 @@ def login():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return redirect("/recipes")
-        return render_template('Login.html',
+        return render_template('login.html',
                                message="Incorrect login or password",
                                form=form)
     return render_template('login.html', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/registration', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
-            return render_template('register.html', title='Registration',
+            return render_template('registration.html', title='Registration',
                                    form=form,
                                    message="Passwords")
         db_sess = db_session.create_session()
         if db_sess.query(User).filter(User.email == form.email.data).first():
-            return render_template('register.html', title='Registration',
+            return render_template('registration.html', title='Registration',
                                    form=form,
                                    message="There is already such a user")
         """post('http://localhost:5000/api/v2/users', json={
@@ -77,14 +77,12 @@ def register():
             'password': form.password.data}).json()
 """
         return redirect('/login')
-    return render_template('Registration.html', form=form)
+    return render_template('registration.html', form=form)
 
 
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
-    return render_template('recipe_finder')
-
-
+    return render_template('index.html')
 
 
 def main():
