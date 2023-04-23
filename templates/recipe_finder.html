@@ -106,13 +106,15 @@
 
 <section class="u-clearfix u-container-align-center u-image u-shading u-section-1" id="sec-115e" data-image-width="3000"
          data-image-height="2250">
-    <div class="u-align-center u-clearfix u-custom-html u-custom-html-1">
-        <form method=post>
-            {{ form.name.label }}<br>
-            {{ form.csrf_token }}
-            {{ form.name(class="form-control") }}<br>
-            {{ form.submit(class="btn btn-primary") }}
-        </form>
+    <div class="u-container-layout u-container-layout-1">
+        <div class="u-align-center u-clearfix u-custom-html u-custom-html-1">
+            <form method=post>
+                {{ form.name.label }}<br>
+                {{ form.csrf_token }}
+                {{ form.name(class="form-control") }}<br>
+                {{ form.submit(class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-btn-0") }}
+            </form>
+         </div>
     </div>
     <a href=""
        class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius-50 u-btn-1">Search<br>

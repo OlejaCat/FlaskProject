@@ -85,10 +85,10 @@ def register():
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
     form = AddProductForm()
-    results = get(f'http://localhost:5000/api/product/{id_product}').json()['product']
-    if request.method == 'GET':
-        form.name.data = results['name']
-        form.cost.data = results['cost']
+    # results = get(f'http://localhost:5000/api/product/{}').json()['product']
+    # if request.method == 'GET':
+    #     form.name.data = results['name']
+    #     form.cost.data = results['cost']
     if form.validate_on_submit():
         pass
     return render_template('recipe_finder.html', form=form)
