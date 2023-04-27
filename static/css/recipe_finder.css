@@ -59,6 +59,15 @@
 .text {
     color: black;
 }
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    text-align: center;}
+
+th, td{
+    color: white;}
+
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
     min-height: 400px;

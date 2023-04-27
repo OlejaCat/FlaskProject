@@ -8,11 +8,13 @@ from requests import delete, post, get, request
 from data import db_session
 from data.products import Products
 from data.users import User
+from data.add_product import AddProduct
 from forms.LoginForm import LoginForm
 from forms.AddProductForm import AddProductForm
 from forms.ProductsForm import ProductsForm
 from forms.FinderForm import FinderForm
 from forms.user import RegisterForm
+from flask_sqlalchemy import SQLAlchemy
 
 UPLOAD_FOLDER = '/static/images'
 app = Flask(__name__)
@@ -88,9 +90,15 @@ def register():
 def recipe_finder():
     form = AddProductForm()
     if form.validate_on_submit() and form.submit.data:
+        db_sess = db_session.create_session()
+        add_product = db_sess.query(AddProduct).all()
+        product = AddProduct(
+            name=form.name.data)
+        db_sess.add(product)
         return render_template("recipe_finder.html",
                                form=form,
-                               product=form.name.data)
+                               product=form.name.data,
+                               add_product= add_product)
     return render_template('recipe_finder.html', form=form)
 
 
