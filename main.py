@@ -8,9 +8,9 @@ from requests import delete, post, get, request
 from data import db_session
 from data.products import Products
 from data.users import User
-from data.add_product import AddProduct
 from forms.LoginForm import LoginForm
 from forms.AddProductForm import AddProductForm
+from forms.ClearProductForm import ClearProductForm
 from forms.ProductsForm import ProductsForm
 from forms.FinderForm import FinderForm
 from forms.user import RegisterForm
@@ -86,20 +86,26 @@ def register():
     return render_template('registration.html', form=form)
 
 
+add_product = []
+
+
 @app.route('/recipe_finder', methods=['GET', 'POST'])
 def recipe_finder():
     form = AddProductForm()
+    form2 = ClearProductForm()
     if form.validate_on_submit() and form.submit.data:
-        db_sess = db_session.create_session()
-        add_product = db_sess.query(AddProduct).all()
-        product = AddProduct(
-            name=form.name.data)
-        db_sess.add(product)
+        add_product.append(form.name.data)
         return render_template("recipe_finder.html",
                                form=form,
-                               product=form.name.data,
-                               add_product= add_product)
-    return render_template('recipe_finder.html', form=form)
+                               form2=form2,
+                               add_product=add_product)
+    if form2.submit.data:
+        add_product.clear()
+        return render_template("recipe_finder.html",
+                               form=form,
+                               form2=form2,
+                               add_product=add_product)
+    return render_template('recipe_finder.html', form=form, form2=form2, add_product=add_product)
 
 
 @app.route('/products', methods=['GET', 'POST'])
@@ -121,7 +127,6 @@ def products():
 
 def main():
     db_session.global_init("db/mars_explorer.db")
-
     port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
 
